@@ -1,0 +1,692 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Find Your UMER Experience</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Concepto: una pregunta por pantalla sobre el celeste de marca, dividida en cuatro partes visibles (barra segmentada). El amarillo solo marca el punto de atención. El resultado abre con un panel azul para que se sienta un cierre. */
+  --bg:#CCECF4;
+  --surface:#FFFFFF;
+  --soft:#E4F4F8;
+  --ink:#0A1A22;
+  --muted:#46606B;
+  --line:#A6D2DE;
+  --blue:#158ADB;
+  --blue-deep:#0E6DB0;
+  --blue-ink:#0E6DB0;
+  --yellow:#FFC93C;
+  --yellow-soft:rgba(255,201,60,.28);
+  --font:'Open Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1A22;--surface:#10262F;--soft:#173340;--ink:#EAF6FA;--muted:#9FBAC5;--line:#2A4D5C;--blue-ink:#6DBDF5;--yellow-soft:rgba(255,201,60,.2);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1A22;--surface:#10262F;--soft:#173340;--ink:#EAF6FA;--muted:#9FBAC5;--line:#2A4D5C;--blue-ink:#6DBDF5;--yellow-soft:rgba(255,201,60,.2);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{height:100%}
+body{
+  min-height:100%;
+  display:flex;flex-direction:column;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:20px 24px;
+  background:var(--bg);color:var(--ink);
+  font-family:var(--font);font-size:17px;line-height:1.55;letter-spacing:-.005em;
+  -webkit-text-size-adjust:100%;
+}
+button,input,textarea{font:inherit;color:inherit;letter-spacing:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+[data-focus]:focus{outline:none}
+
+.app{flex:1;width:100%;max-width:520px;margin:0 auto;display:flex;flex-direction:column;min-width:0}
+.screen{flex:1;display:flex;flex-direction:column;gap:20px;min-width:0;animation:rise .26s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.screen{animation:none}*{transition:none!important}}
+
+h1,h2,h3{margin:0;text-wrap:balance;letter-spacing:-.022em;line-height:1.1;font-weight:800}
+h1{font-size:clamp(34px,10vw,48px)}
+h2{font-size:clamp(26px,7vw,32px)}
+h3{font-size:21px;line-height:1.2}
+p{margin:0}
+.label{font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-ink)}
+.mark{background:linear-gradient(transparent 60%,var(--yellow) 60% 92%,transparent 92%);padding:0 .06em}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:500;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-ink)}
+.brand b{font-family:var(--font);font-weight:800;letter-spacing:-.01em;font-size:18px;text-transform:none;color:var(--ink)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--yellow);flex:none}
+.muted{color:var(--muted)}
+.fine{font-size:14px;color:var(--muted)}
+.stack{display:flex;flex-direction:column;gap:12px}
+
+/* Botones */
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;min-height:58px;padding:14px 20px;
+  border:0;border-radius:16px;
+  background:var(--blue);color:#fff;
+  font-weight:700;font-size:18px;text-decoration:none;text-align:center;letter-spacing:.01em;
+  transition:transform .12s ease,filter .12s ease,opacity .12s ease;
+}
+.btn:hover{filter:brightness(1.06)}
+.btn:active{transform:translateY(1px) scale(.995)}
+.btn[disabled]{opacity:.42;cursor:not-allowed;filter:none;transform:none}
+.btn.yellow{background:var(--yellow);color:#0A1A22}
+.btn.ghost{background:transparent;color:inherit;border:2px solid currentColor;min-height:52px;font-size:15.5px;font-weight:600;letter-spacing:0}
+.btn.small{min-height:50px;font-size:15px;letter-spacing:0}
+.linkish{background:none;border:0;padding:10px 4px;color:var(--blue-ink);font-weight:600;font-size:15px;text-decoration:underline;text-underline-offset:3px;min-height:44px}
+
+/* Intro */
+.intro{position:relative;overflow:hidden}
+.mol{position:absolute;right:-6px;top:30px;width:160px;max-width:42%;color:var(--blue);opacity:.36;pointer-events:none}
+.intro .mid{display:flex;flex-direction:column;gap:18px;position:relative;padding-top:34px}
+.sub{font-size:21px;font-weight:600;font-style:italic;line-height:1.3;color:var(--blue-ink);max-width:24ch}
+.intro-text{display:flex;flex-direction:column;gap:12px;font-size:17px}
+.note-box{border-left:4px solid var(--yellow);padding:6px 0 6px 14px;font-size:14.5px;color:var(--muted)}
+.lab-line{border-left:4px solid var(--yellow);padding:4px 0 4px 14px;font-weight:600}
+.namebox{display:flex;flex-direction:column;gap:8px}
+.field{width:100%;min-height:56px;padding:12px 16px;border:2px solid var(--line);border-radius:14px;background:var(--surface);font-size:18px;font-weight:600}
+.field::placeholder{color:var(--muted);font-weight:400}
+.field:focus{border-color:var(--blue);outline:none}
+.h1b{display:block;margin-top:.4em;font-size:.58em;font-weight:700;letter-spacing:-.015em;line-height:1.2;color:var(--blue-ink)}
+
+/* Preguntas */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.segs{display:flex;gap:6px}
+.seg{height:10px;border-radius:99px;background:var(--surface);position:relative;overflow:hidden;min-width:0}
+.seg i{position:absolute;left:0;top:0;bottom:0;background:var(--blue);border-radius:99px;transition:width .3s ease}
+.part{display:flex;flex-direction:column;gap:4px;border-left:4px solid var(--yellow);padding:2px 0 2px 14px}
+.part .pn{font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-ink)}
+.part h3{font-size:24px}
+.part p{font-size:15.5px;color:var(--muted)}
+.ctx{font-size:16px;background:var(--surface);border-radius:16px;padding:14px 16px}
+.q-text{font-size:clamp(23px,6.4vw,28px);font-weight:700;line-height:1.28;letter-spacing:-.015em;text-wrap:balance}
+.sent{font-size:clamp(21px,5.8vw,25px);font-weight:600;line-height:1.35;padding:6px 0 6px 16px;border-left:4px solid var(--yellow)}
+.blank{display:inline-block;min-width:2.6em;height:1em;margin-inline:.1em;border-bottom:4px solid var(--yellow);transform:translateY(.12em)}
+.opts{display:flex;flex-direction:column;gap:12px}
+.opt{
+  display:flex;align-items:center;gap:14px;width:100%;min-height:62px;padding:14px 16px;
+  border:2px solid var(--line);border-radius:14px;background:var(--surface);
+  font-weight:600;font-size:17px;line-height:1.35;text-align:left;
+  transition:border-color .12s ease,background .12s ease,color .12s ease;
+}
+.opt:hover{border-color:var(--blue)}
+.opt .k{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--soft);color:var(--blue-ink);font-family:var(--mono);font-weight:500;font-size:13px}
+.opt .t{min-width:0;overflow-wrap:anywhere}
+.opt.sel{background:var(--blue-deep);border-color:var(--blue-deep);color:#fff}
+.opt.sel .k{background:#fff;color:var(--blue-deep)}
+.opt.skip{border-style:dashed;background:transparent;color:var(--muted);justify-content:center;min-height:52px;font-size:15.5px}
+.opt.skip.sel{background:var(--blue-deep);color:#fff}
+.nav{margin-top:auto;position:sticky;bottom:0;display:flex;gap:12px;padding:16px 0 6px;background:linear-gradient(to top,var(--bg) 72%,transparent)}
+.nav .btn.ghost{width:auto;min-width:104px;color:var(--blue-ink)}
+.nav .btn:not(.ghost){flex:1}
+
+/* Resultado */
+.card{background:var(--surface);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.card p{font-size:16.5px}
+.hero{background:var(--blue-deep);color:#fff;border-radius:24px;padding:26px 22px;display:flex;flex-direction:column;gap:14px}
+.hero .label{color:var(--bg)}
+.hero h1{font-size:clamp(32px,9.5vw,44px)}
+.hero .tag{font-size:19px;font-weight:600;font-style:italic;line-height:1.35}
+.hero p{font-size:16.5px}
+.hero .btn.ghost{color:#fff}
+.sec-title{font-size:22px}
+.pts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.pts li{display:flex;gap:12px;align-items:flex-start;min-width:0}
+.pts li::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--blue);margin-top:.5em}
+.pts.next li::before{background:var(--yellow)}
+.pts span{min-width:0;font-size:16.5px}
+.divider{height:2px;background:var(--line);border:0;margin:2px 0;border-radius:2px}
+.list{margin:0;padding-left:1.15em;display:flex;flex-direction:column;gap:6px;font-size:16.5px}
+.note{border-left:4px solid var(--yellow);padding:4px 0 4px 14px;font-size:16.5px}
+.area{width:100%;min-height:110px;padding:12px 14px;border:2px solid var(--line);border-radius:14px;background:var(--surface);font-size:16.5px;line-height:1.5;resize:vertical}
+.area:focus{border-color:var(--blue);outline:none}
+.oc{background:var(--surface);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.oc h3{font-size:18px;letter-spacing:-.01em}
+.oc-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.soon{background:var(--yellow);color:#0A1A22;font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:99px}
+.oc p{font-size:15.5px}
+.oc .st{color:var(--muted);font-size:14.5px}
+.pending{border:2px dashed var(--yellow);background:var(--yellow-soft);border-radius:12px;padding:10px 12px;font-size:13.5px;line-height:1.5}
+.copybox{width:100%;min-height:120px;border-radius:12px;border:2px solid var(--line);background:var(--surface);padding:10px 12px;font-size:15px}
+.foot{font-size:13px;color:var(--muted);text-align:center;font-family:var(--mono);letter-spacing:.03em}
+.center{text-align:center;align-self:center}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));width:calc(100% - 32px);max-width:480px;background:var(--ink);color:var(--bg);border-radius:14px;padding:14px 16px;font-size:14.5px;line-height:1.4;z-index:20;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+</style>
+
+<main class="app" id="app" aria-live="polite"></main>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+/* ====== CONFIGURÁ ESTO ====== */
+const CONFIG = {
+  LAB_URL: "https://agustinaumeres30.github.io/umer-lab-speaking/",
+  WHATSAPP: "[TU WHATSAPP]",                          // solo números con código de país, sin + ni espacios
+  COMMUNITY_URL: "[LINK DE LA COMUNIDAD UMER]",       // invitación a la Comunidad de WhatsApp
+  GROUP_TALK_URL: "[LINK DE INTERÉS GROUP TALK]",     // opcional: si queda sin completar se usa el WhatsApp
+  CHECKLIST_URL: "[LINK DE DESCARGA DEL CHECKLIST]"   // descarga del checklist gratuito
+};
+
+/* ====== PARTES Y PREGUNTAS (12 en total) ====== */
+const PARTS = [
+  {t:"Vos y tu inglés", s:"Dónde estás hoy y qué estás buscando."},
+  {t:"Tu rol en UMER LAB", s:"Cómo funciona y cómo querés participar."},
+  {t:"Comunicación", s:"Situaciones del día a día. Elegí lo que harías normalmente."},
+  {t:"Gramática", s:"Cinco frases cortas en inglés. Elegí la opción que mejor completa."}
+];
+
+const STEPS = [
+  {id:"intro", kind:"intro"},
+
+  /* Parte 1 */
+  {id:"q1", kind:"choice", part:1, q:"¿Cómo describirías tu inglés actualmente?", opts:[
+    "Sé algo de inglés, pero me cuesta usarlo cuando tengo que hablar.",
+    "Puedo comunicarme, aunque a veces me cuesta expresar exactamente lo que quiero decir.",
+    "Puedo comunicarme con comodidad en situaciones conocidas.",
+    "Puedo expresar y desarrollar mis ideas, incluso en temas más complejos."]},
+  {id:"q10", kind:"choice", part:1, q:"¿Qué estás buscando en esta etapa con el inglés?", opts:[
+    "Sentirme más seguro/a al hablar.",
+    "Expresar mis ideas con mayor claridad.",
+    "Mantener mi inglés activo con práctica regular.",
+    "Explorar nuevos temas, intercambiar ideas y desarrollar mis habilidades de comunicación.",
+    "Incorporar el inglés como parte habitual de mi vida."]},
+
+  /* Parte 2 */
+  {id:"ready", kind:"choice", part:2,
+    ctx:"En UMER LAB sos el protagonista: Agus diseña experiencias de speaking, te propone desafíos y te da feedback. Vos participás, experimentás y explorás también entre sesiones. No hace falta que lo sepas todo: alcanza con las ganas de participar.",
+    q:"¿Te imaginás participando así en tu aprendizaje?", opts:[
+    "¡Sí! Estoy listo/a para tener un rol activo y hacerme el tiempo.",
+    "Me gustaría, pero necesito entender un poco mejor el compromiso.",
+    "Todavía no estoy seguro/a."]},
+
+  /* Parte 3 */
+  {id:"q3", kind:"choice", part:3, q:"Alguien te pregunta: “¿Creés que la tecnología mejoró nuestras vidas?”. ¿Cómo responderías?", opts:[
+    "Daría una respuesta breve, como “Sí, definitivamente”.",
+    "Daría mi opinión y una razón.",
+    "Explicaría mi opinión y la acompañaría con ejemplos.",
+    "Exploraría distintas perspectivas, desarrollaría mis argumentos y conectaría ideas."]},
+  {id:"q5", kind:"choice", part:3, q:"Estás describiendo una película, pero no recordás la palabra “plot”. ¿Qué harías?", opts:[
+    "Me quedaría trabado/a porque no recuerdo la palabra.",
+    "Intentaría explicar de qué trata la película usando otras palabras.",
+    "Daría un ejemplo o la compararía con otra película.",
+    "Combinaría distintas formas de explicarlo para transmitir mi idea."]},
+  {id:"q7", kind:"choice", part:3, q:"Estás en plena reunión, explicando algo en inglés, y de golpe se te va el hilo: no te acordás qué ibas a decir. ¿Qué hacés?", opts:[
+    "Me quedo en blanco y prefiero dejarlo ahí.",
+    "Pido disculpas e intento empezar de nuevo.",
+    "Hago una pausa y sigo con lo que me acuerde.",
+    "Hago una pausa, vuelvo a lo último que dije y sigo desde ahí."]},
+  {id:"q9", kind:"choice", part:3, q:"Alguien expresa una opinión con la que no estás de acuerdo. ¿Cómo responderías?", opts:[
+    "Probablemente me quedaría callado/a.",
+    "Diría que no estoy de acuerdo.",
+    "Explicaría por qué tengo una opinión diferente.",
+    "Explicaría mi perspectiva, haría preguntas y trataría de conocer el punto de vista de la otra persona."]},
+
+  /* Parte 4: gramática esencial, present simple, pasados, present perfect y dos conditionals (will / would) */
+  {id:"g1", kind:"grammar", part:4, q:"Complete the sentence:", sent:"She ___ up at 7 every morning.", opts:[
+    "get","gets","is getting"], a:1},
+  {id:"g2", kind:"grammar", part:4, q:"Complete the sentence:", sent:"While I ___ to work yesterday, I ___ an old friend.", opts:[
+    "walked / was seeing","walking / seen","was walking / saw"], a:2},
+  {id:"g3", kind:"grammar", part:4, q:"Complete the sentence:", sent:"I ___ in this city for ten years, and I love it.", opts:[
+    "live","have lived","lived"], a:1},
+  {id:"g4", kind:"grammar", part:4, q:"Complete the sentence:", sent:"If it rains tomorrow, we ___ the picnic.", opts:[
+    "cancel","would cancel","will cancel"], a:2},
+  {id:"g5", kind:"grammar", part:4, q:"Complete the sentence:", sent:"If I ___ more free time, I would learn another language.", opts:[
+    "would have","had","have"], a:1},
+
+  {id:"result", kind:"result"}
+];
+
+const QS = STEPS.filter(s => s.kind === "choice" || s.kind === "grammar");
+const TQ = QS.length;
+const META = {};
+QS.forEach((s,i) => { META[s.id] = {n:i+1}; });
+PARTS.forEach((p,pi) => {
+  const arr = QS.filter(s => s.part === pi + 1);
+  p.count = arr.length;
+  arr.forEach((s,k) => { META[s.id].k = k + 1; META[s.id].first = (k === 0); });
+});
+const GRAMMAR = STEPS.filter(s => s.kind === "grammar");
+
+/* Lo que ya podés hacer / lo que podrías explorar (por dimensión y nivel 0-3) */
+const DIMS = {
+  ideas: {
+    s:["Compartís mensajes claros y breves.","Das tu opinión y la respaldás con una razón.","Desarrollás tus ideas con ejemplos y detalles.","Explorás distintas perspectivas y conectás ideas."],
+    n:["Sumar una razón o un ejemplo puede ayudar a que tus ideas lleguen más lejos.","Agregar ejemplos y detalles puede hacer tus ideas más ricas.","Conectar tus ideas y explorar otros ángulos puede llevarlas todavía más lejos.","Seguí experimentando con nuevos temas y formas de organizar tus ideas."]},
+  strat: {
+    s:["Notás cuando falta una palabra, y ahí empiezan las estrategias.","Intentás explicar con otras palabras cuando una palabra no sale.","Usás ejemplos y comparaciones cuando no encontrás la palabra exacta.","Combinás descripciones, ejemplos y comparaciones para que tu mensaje llegue."],
+    n:["Describir, dar un ejemplo o comparar puede ayudarte a seguir cuando una palabra no sale.","Los ejemplos y las comparaciones te dan más formas de transmitir tu mensaje.","Combinar varias formas de explicar puede hacer tu mensaje todavía más claro.","Seguí experimentando con nuevas formas de reformular tus ideas."]},
+  inter: {
+    s:["Escuchás, que es el primer paso de cualquier intercambio.","Decís cuando ves las cosas distinto.","Explicás tu punto de vista cuando no estás de acuerdo.","Compartís tu mirada y hacés preguntas para entender a la otra persona."],
+    n:["Compartir lo que pensás, y por qué, ayuda a entrar en la conversación.","Explicar por qué ves las cosas distinto enriquece los intercambios.","Las preguntas de seguimiento pueden ayudarte a sostener las conversaciones.","Explorar más temas te va a dar cosas nuevas de las que hablar."]},
+  res: {
+    /* se elige por cantidad de aciertos en gramática (0 a 5), no por nivel. UMER LAB parte de un B1 y puede llegar a B2 */
+    s:["Estás empezando a reconocer las estructuras de un nivel intermedio.","Reconocés algunas de las estructuras de un nivel intermedio.","Reconocés varias de las estructuras de un nivel intermedio.","Reconocés bien la mayoría de las estructuras de un nivel intermedio, que es el punto de partida de UMER LAB.","Reconocés casi todas las estructuras de un nivel intermedio, el punto de partida de UMER LAB.","Manejás con seguridad una buena variedad de estructuras de un nivel intermedio, el punto de partida de UMER LAB."],
+    n:["Ver en contexto el presente, los pasados y el present perfect te acerca al punto de partida de UMER LAB (nivel intermedio).","Practicar presente, pasados y present perfect te va a dar una base más firme para llegar a un nivel intermedio.","Afianzar los tiempos y los conditionals te acerca al punto de partida de UMER LAB (nivel intermedio).","Afianzar los tiempos y los conditionals que todavía te cuestan te va a dar más seguridad en un nivel intermedio.","Dentro de UMER LAB podés ir más allá del nivel intermedio y sumar estructuras nuevas, como la voz pasiva o el reported speech.","Dentro de UMER LAB podés avanzar hacia un nivel intermedio alto y sumar estructuras más desafiantes, como la voz pasiva, el reported speech o los conditionals mixtos."]}
+};
+
+const RESULTS = {
+  1: {title:"UMER LAB could be your next step!", tag:"You've got the resources. Let's put them into action.",
+      para:"Tus respuestas muestran una base sólida para comunicarte en inglés: desarrollás ideas, opinás y usás distintas estructuras. UMER LAB puede ser tu espacio para explorar nuevos temas, experimentar con el idioma y seguir desarrollando tu comunicación."},
+  2: {title:"You might be a potential fit!", tag:"There's already a foundation to build on.",
+      para:"Tus respuestas muestran que ya tenés recursos útiles para comunicarte en inglés, y también algunas áreas para seguir desarrollando. UMER LAB puede valer la pena, y me encantaría conocer mejor tus objetivos. Hablemos y vemos si es el lugar indicado para vos."},
+  3: {title:"Let's keep building your English!", tag:"Every step gives you new possibilities.",
+      para:"Tus respuestas muestran que todavía hay recursos y habilidades de comunicación para seguir construyendo, y eso está perfecto: no hay apuro. Hay distintas formas de seguir explorando el inglés, y me encantaría ayudarte a encontrar un espacio que tenga sentido para vos en esta etapa. Más abajo vas a ver otras formas de seguir conectado/a con el inglés y con UMER."}
+};
+
+const EXPLORE = [
+  "Developing and organizing your ideas.",
+  "Finding alternative ways to express yourself.",
+  "Becoming more flexible when speaking.",
+  "Keeping your English active through regular practice."
+];
+
+const GOALS_ES = [
+  "sentirte más seguro/a al hablar",
+  "expresar tus ideas con mayor claridad",
+  "mantener tu inglés activo con práctica regular",
+  "explorar nuevos temas, intercambiar ideas y desarrollar tus habilidades de comunicación",
+  "incorporar el inglés como parte habitual de tu vida"
+];
+
+const READY_ES = [
+  "Querés tener un rol activo en tu aprendizaje, y así es justamente como funciona UMER LAB.",
+  "Querés entender mejor el compromiso. Lo charlamos cuando hablemos, sin presión.",
+  "Todavía no estás seguro/a, y está perfecto. Una charla puede ayudarte a decidir."
+];
+
+/* ====== ESTADO (se guarda en el navegador) ====== */
+const KEY = "umer-find-experience-v5";
+let S = {i:0, ans:{}, prod:"", name:""};
+
+function allAnswered(){ return QS.every(s => Number.isInteger(S.ans[s.id])); }
+function load(){
+  try{
+    const raw = localStorage.getItem(KEY);
+    if(!raw) return;
+    const o = JSON.parse(raw);
+    if(!o || typeof o !== "object") return;
+    if(Number.isInteger(o.i)) S.i = Math.min(Math.max(o.i, 0), STEPS.length - 1);
+    if(o.ans && typeof o.ans === "object") S.ans = o.ans;
+    if(typeof o.prod === "string") S.prod = o.prod.slice(0, 600);
+    if(typeof o.name === "string") S.name = o.name.slice(0, 40);
+    if(!S.name.trim()) S.i = 0;
+    if(STEPS[S.i].kind === "result" && !allAnswered()) S.i = 0;
+  }catch(e){}
+}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const LET = ["A","B","C","D","E"];
+
+const MOL = '<svg class="mol" viewBox="0 0 160 120" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 92 L62 62 L102 78 L136 36 M62 62 L58 24 M102 78 L122 110"/></g><circle cx="22" cy="92" r="9" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="62" cy="62" r="13" fill="currentColor"/><circle cx="102" cy="78" r="8" fill="currentColor"/><circle cx="136" cy="36" r="11" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="58" cy="24" r="7" fill="currentColor"/><circle cx="122" cy="110" r="6" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>';
+
+/* ====== LÓGICA DE RESULTADO (combinación de dimensiones, no un puntaje total) ====== */
+function compute(){
+  const a = S.ans;
+  const val = id => (Number.isInteger(a[id]) && a[id] >= 0) ? a[id] : 0;
+
+  const ideas = val("q3");
+  const strat = (val("q5") + val("q7")) / 2;
+  const inter = val("q9");
+  const gram = GRAMMAR.filter(g => a[g.id] === g.a).length;
+
+  const comm = (ideas >= 1 ? 1 : 0) + (strat >= 1.5 ? 1 : 0) + (inter >= 2 ? 1 : 0);
+
+  /* respuestas más bajas en comunicación (en blanco, callado/a, respuesta mínima) */
+  const lows = ["q3","q5","q7","q9"].filter(id => val(id) === 0).length;
+  /* puntos de comunicación: 4 preguntas de 0 a 3 (máximo 12). La mitad (6) alcanza para UMER LAB si la gramática acompaña: se puede fallar 2 o 3 de gramática */
+  const commPts = val("q3") + val("q5") + val("q7") + val("q9");
+
+  let level = 3;
+  if(lows >= 3 || commPts <= 3) level = 3;
+  else if(commPts >= 6 && gram >= 2) level = 1;
+  else if(commPts >= 6 || (commPts >= 4 && gram >= 2)) level = 2;
+  /* si se traba con la palabra y también se queda en blanco con el hilo, mejor charlarlo antes */
+  if(level === 1 && val("q5") === 0 && val("q7") === 0) level = 2;
+
+  const clamp = n => Math.max(0, Math.min(3, n));
+  const tiers = {
+    ideas: clamp(ideas),
+    strat: clamp(Math.round(strat)),
+    inter: clamp(inter),
+    res: gram <= 1 ? 0 : gram === 2 ? 1 : gram === 3 ? 2 : 3
+  };
+  const order = ["ideas","strat","inter","res"];
+  const ranked = order.map((k,idx) => ({k, t:tiers[k], idx})).sort((x,y) => y.t - x.t || x.idx - y.idx);
+  const ti = r => r.k === "res" ? gram : r.t;
+  const strengths = ranked.slice(0,2).map(r => DIMS[r.k].s[ti(r)]);
+  const nexts = ranked.slice(2).map(r => DIMS[r.k].n[ti(r)]);
+
+  return {level, strengths, nexts, gram, comm, lows, commPts, selfLow: val("q1") <= 1};
+}
+
+/* ====== ENLACES (placeholders visibles) ====== */
+const isUrl = u => /^https?:\/\//i.test(String(u || ""));
+const waDigits = String(CONFIG.WHATSAPP).replace(/\D/g, "");
+const waOK = !/[\[\]]/.test(CONFIG.WHATSAPP) && waDigits.length >= 8;
+let MISSING = new Set();
+
+function link(cls, label, href, missing, extra){
+  if(href) return `<a class="btn ${cls}" href="${esc(href)}" target="_blank" rel="noopener" ${extra || ""}>${label}</a>`;
+  return `<a class="btn ${cls}" href="#" data-act="noop" data-missing="${esc(missing || "")}">${label}</a>`;
+}
+function waHref(msg){ return `https://wa.me/${waDigits}?text=${encodeURIComponent(msg)}`; }
+function waLink(cls, label, msg){
+  if(waOK) return link(cls, label, waHref(msg), "", 'data-wa="1"');
+  MISSING.add(CONFIG.WHATSAPP);
+  return link(cls, label, "", CONFIG.WHATSAPP);
+}
+function urlLink(cls, label, url){
+  if(isUrl(url)) return link(cls, label, url);
+  MISSING.add(url);
+  return link(cls, label, "", url);
+}
+
+function goalFirstPerson(){
+  const idx = S.ans.q10;
+  if(!Number.isInteger(idx) || idx < 0) return "";
+  const t = STEPS.find(s => s.id === "q10").opts[idx].replace(/\.$/, "");
+  return t.charAt(0).toLowerCase() + t.slice(1);
+}
+function waMessage(r){
+  const nm = S.name.trim();
+  let m = `¡Hola Agus!${nm ? " Soy " + nm + "." : ""} Hice “Find Your UMER Experience” y mi resultado fue: ${RESULTS[r.level].title}`;
+  const g = goalFirstPerson();
+  if(g) m += ` Hoy busco ${g}.`;
+  if(S.prod.trim()) m += ` Mi comentario o pregunta sobre UMER LAB: “${S.prod.trim().slice(0,400)}”`;
+  return m;
+}
+function summaryText(r){
+  const nm = S.name.trim();
+  const lines = ["Find Your UMER Experience"];
+  if(nm) lines.push(`Nombre: ${nm}`);
+  lines.push(`Resultado: ${RESULTS[r.level].title}`);
+  lines.push("Fortalezas: " + r.strengths.join(" "));
+  lines.push("Para explorar: " + r.nexts.join(" "));
+  const g = goalFirstPerson();
+  if(g) lines.push(`Hoy busco: ${g}.`);
+  if(S.prod.trim()) lines.push(`Mi comentario o pregunta: ${S.prod.trim()}`);
+  return lines.join("\n");
+}
+
+/* ====== PANTALLAS ====== */
+function introHTML(){
+  return `
+  <section class="screen intro">
+    ${MOL}
+    <div class="brand"><span class="dot"></span><b>UMER</b> English</div>
+    <div class="mid">
+      <span class="label">Find Your UMER Experience</span>
+      <h1 data-focus tabindex="-1">¿<span class="mark">UMER LAB</span> es para vos? <span class="h1b">¡Hacé el test y descubrilo!</span></h1>
+      <p class="sub">Let's see what your English can do!</p>
+      <div class="intro-text">
+        <p>Quizás ya sabés bastante inglés, pero no siempre tenés la oportunidad de usarlo.</p>
+        <p>Quizás podés comunicarte, pero querés expresar tus ideas con más claridad, sentirte más seguro/a o descubrir nuevas formas de sostener una conversación.</p>
+        <p>O quizás sentís que tu inglés está ahí, pero necesita moverse. Porque el inglés se usa: hay que activarlo, mantenerlo en movimiento y hacerlo parte de tu día a día.</p>
+        <p class="lab-line">Si estás buscando un lugar para lograrlo, UMER LAB es el espacio indicado. Porque un lab es eso: un laboratorio donde podés experimentar y poner tu inglés en acción.</p>
+        <p><b>Exploremos dónde estás hoy y cómo podría ser tu próximo paso.</b></p>
+      </div>
+      <p class="note-box">Esto no es una certificación oficial de inglés ni un test de nivel tradicional. Es una forma de explorar tus habilidades de comunicación y descubrir qué experiencia UMER puede ser para vos.</p>
+      <div class="namebox">
+        <label for="name" class="label">¿Cómo te llamás?</label>
+        <input id="name" class="field" type="text" maxlength="40" autocomplete="name" placeholder="Tu nombre" value="${esc(S.name)}" required>
+        <p class="fine">Escribí tu nombre para empezar. El apellido es opcional.</p>
+      </div>
+      <button class="btn" data-act="next" id="startBtn" ${S.name.trim() ? "" : "disabled"}>EMPEZAR A EXPLORAR</button>
+      <p class="fine">${TQ} preguntas en ${PARTS.length} partes.</p>
+    </div>
+  </section>`;
+}
+
+function segsHTML(st){
+  const cur = st.part;
+  return PARTS.map((p,pi) => {
+    let w = 0;
+    if(pi + 1 < cur) w = 100;
+    else if(pi + 1 === cur) w = Math.round(META[st.id].k / p.count * 100);
+    return `<span class="seg" style="flex:${p.count}"><i style="width:${w}%"></i></span>`;
+  }).join("");
+}
+
+function choiceHTML(st){
+  const m = META[st.id];
+  const part = PARTS[st.part - 1];
+  const cur = S.ans[st.id];
+  const isG = st.kind === "grammar";
+  const opts = st.opts.map((o, i) => `<button class="opt${cur === i ? " sel" : ""}" data-act="opt" data-i="${i}"><span class="k">${LET[i]}</span><span class="t">${esc(o)}</span></button>`).join("");
+  const skip = isG ? `<button class="opt skip${cur === -1 ? " sel" : ""}" data-act="opt" data-i="-1">No estoy seguro/a</button>` : "";
+  const sent = st.sent ? `<p class="sent">${esc(st.sent).replace(/___/g, '<span class="blank" role="img" aria-label="espacio en blanco"></span>')}</p>` : "";
+  const header = m.first
+    ? `<div class="part"><span class="pn">Parte ${st.part} de ${PARTS.length}</span><h3>${esc(part.t)}</h3><p>${esc(part.s)}</p></div>`
+    : "";
+  const ctx = st.ctx ? `<p class="ctx">${esc(st.ctx)}</p>` : "";
+  const nav = `<div class="nav"><button class="btn ghost" data-act="back">Atrás</button><button class="btn" data-act="next" id="nextBtn" ${Number.isInteger(cur) ? "" : "disabled"}>${S.i === STEPS.length - 2 ? "VER MI RESULTADO" : "Siguiente"}</button></div>`;
+  return `
+  <section class="screen">
+    <div class="topbar">
+      <span class="label">Pregunta ${String(m.n).padStart(2,"0")} de ${TQ}</span>
+      ${m.first ? "" : `<span class="label">${esc(part.t)}</span>`}
+    </div>
+    <div class="segs" role="progressbar" aria-valuemin="0" aria-valuemax="${TQ}" aria-valuenow="${m.n}" aria-label="Progreso">${segsHTML(st)}</div>
+    ${header}
+    ${ctx}
+    <div class="stack">
+      <h2 class="q-text" data-focus tabindex="-1">${esc(st.q)}</h2>
+      ${sent}
+    </div>
+    <div class="opts">${opts}${skip}</div>
+    ${nav}
+  </section>`;
+}
+
+function resultHTML(){
+  MISSING = new Set();
+  const r = compute();
+  const R = RESULTS[r.level];
+  const nm = S.name.trim();
+  const msg = waMessage(r);
+
+  const gap = (r.level === 1 && r.selfLow) ? `<p>Puede que tengas más recursos de los que sentís.</p>` : "";
+
+  let cta = "";
+  if(r.level === 1){
+    cta = urlLink("yellow", "CONOCÉ UMER LAB", CONFIG.LAB_URL) + waLink("ghost", "ESCRIBIME POR WHATSAPP", msg);
+  }else if(r.level === 2){
+    cta = waLink("yellow", "HABLEMOS DE TU INGLÉS", msg) + urlLink("ghost", "CÓMO FUNCIONA UMER LAB", CONFIG.LAB_URL);
+  }else{
+    cta = waLink("yellow", "HABLEMOS DE TU INGLÉS", msg);
+  }
+
+  const sendBtn = waLink("small", "ENVIAR A AGUS POR WHATSAPP", msg);
+
+  const goalIdx = S.ans.q10;
+  const goalLine = Number.isInteger(goalIdx) && goalIdx >= 0 ? `Hoy buscás <b>${esc(GOALS_ES[goalIdx])}</b>. ` : "";
+  const readyLine = Number.isInteger(S.ans.ready) && S.ans.ready >= 0 ? esc(READY_ES[S.ans.ready]) : "";
+  const personal = (goalLine || readyLine) ? `<p class="note">${goalLine}${readyLine}</p>` : "";
+
+  const explore = r.level === 1 ? `
+    <div class="card">
+      <h3 class="sec-title">¿Qué podrías explorar en UMER LAB?</h3>
+      <ul class="list">${EXPLORE.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+    </div>` : "";
+
+  const strengths = r.strengths.map(x => `<li><span>${esc(x)}</span></li>`).join("");
+  const nexts = r.nexts.map(x => `<li><span>${esc(x)}</span></li>`).join("");
+
+  const groupHref = isUrl(CONFIG.GROUP_TALK_URL) ? CONFIG.GROUP_TALK_URL : (waOK ? waHref("¡Hola Agus!" + (nm ? " Soy " + nm + "." : "") + " Me interesa UMER GROUP TALK. ¿Me avisás cuando esté disponible?") : "");
+  if(!groupHref) MISSING.add(CONFIG.WHATSAPP);
+  const groupBtn = link("small", "AVISAME CUANDO ESTÉ DISPONIBLE", groupHref, CONFIG.WHATSAPP);
+  const comm = urlLink("small", "SUMATE A LA COMUNIDAD", CONFIG.COMMUNITY_URL);
+  const chk = urlLink("small", "DESCARGAR EL CHECKLIST", CONFIG.CHECKLIST_URL);
+
+  const pending = MISSING.size ? `<p class="pending"><b>Pendiente:</b> ${[...MISSING].map(esc).join(" · ")}. Reemplazalos en CONFIG, al inicio del script.</p>` : "";
+
+  return `
+  <section class="screen">
+    <div class="brand"><span class="dot"></span><b>UMER</b> English</div>
+    <div class="hero">
+      <span class="label">${nm ? esc(nm) + ", tu" : "Tu"} resultado</span>
+      <h1 data-focus tabindex="-1">${esc(R.title)}</h1>
+      <p class="tag">${esc(R.tag)}</p>
+      <p>${esc(R.para)}</p>
+      ${gap}
+      ${cta}
+    </div>
+
+    <div class="card">
+      <h3 class="sec-title">Lo que ya podés hacer</h3>
+      <ul class="pts">${strengths}</ul>
+      <hr class="divider">
+      <h3 class="sec-title">Lo que podrías explorar</h3>
+      <ul class="pts next">${nexts}</ul>
+    </div>
+
+    <p class="note">UMER LAB parte de un nivel intermedio (B1) y puede extenderse hasta un intermedio alto (B2), según lo que vayas mostrando en cada clase. Es una referencia orientativa, no una certificación.</p>
+    ${personal}
+    ${explore}
+
+    <div class="stack">
+      <label for="prod" class="label">Opcional · ¿Qué te gustaría saber?</label>
+      <p class="fine">Contame qué estás buscando en UMER LAB o qué te gustaría saber del programa. Se suma al mensaje de WhatsApp.</p>
+      <textarea id="prod" class="area" maxlength="600" placeholder="Escribí acá tu comentario o pregunta…">${esc(S.prod)}</textarea>
+      ${sendBtn}
+      <button class="btn ghost small" style="color:var(--blue-ink)" data-act="copy">Copiar mi resumen</button>
+      <div id="copyOut" hidden></div>
+    </div>
+
+    <div class="stack">
+      <h2 class="sec-title">Otras formas de conectar con UMER</h2>
+      <div class="oc">
+        <div class="oc-head"><h3>UMER GROUP TALK</h3><span class="soon">Próximamente</span></div>
+        <p>Práctica de speaking en grupo para mantener tu inglés activo.</p>
+        <p class="st">Todavía no tiene inscripción abierta. Si te interesa, dejá tu interés y te aviso cuando esté disponible.</p>
+        ${groupBtn}
+      </div>
+      <div class="oc">
+        <h3>UMER COMMUNITY</h3>
+        <p>Una comunidad de WhatsApp con curiosidades, ideas y actividades para seguir conectado/a con el inglés.</p>
+        ${comm}
+      </div>
+      <div class="oc">
+        <h3>FREE ENGLISH CHECKLIST</h3>
+        <p>Un checklist gratuito para descubrir cómo usás el inglés para comunicarte. No es un test de nivel.</p>
+        ${chk}
+      </div>
+    </div>
+
+    ${pending}
+
+    <p class="fine">Esto no es una certificación oficial ni un test de nivel tradicional. Tus respuestas quedan guardadas en este navegador.</p>
+    <button class="linkish center" data-act="restart">Volver a empezar</button>
+    <p class="foot">Let's see what your English can do!<br>@umer.english</p>
+  </section>`;
+}
+
+/* ====== RENDER ====== */
+function render(){
+  const st = STEPS[S.i];
+  const app = document.getElementById("app");
+  app.innerHTML = st.kind === "intro" ? introHTML()
+    : (st.kind === "choice" || st.kind === "grammar") ? choiceHTML(st)
+    : resultHTML();
+  const h = app.querySelector("[data-focus]");
+  if(h){ try{ h.focus({preventScroll:true}); }catch(e){} }
+  try{ window.scrollTo(0,0); }catch(e){}
+}
+function goto(i){ S.i = Math.min(Math.max(i,0), STEPS.length - 1); save(); render(); }
+
+let toastTimer = null;
+function toast(text){
+  const t = document.getElementById("toast");
+  t.textContent = text; t.hidden = false;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { t.hidden = true; }, 4500);
+}
+
+/* ====== EVENTOS ====== */
+document.addEventListener("click", e => {
+  const el = e.target.closest("[data-act]");
+  if(!el) return;
+  const act = el.dataset.act;
+
+  if(act === "noop"){
+    e.preventDefault();
+    toast(`Este botón todavía no tiene link. Falta cargar ${el.dataset.missing || "el link"} en CONFIG.`);
+    return;
+  }
+  if(act === "next"){
+    if(el.disabled) return;
+    if(S.i === 0 && !S.name.trim()){
+      const f = document.getElementById("name");
+      if(f) f.focus();
+      return;
+    }
+    return goto(S.i + 1);
+  }
+  if(act === "back"){ return goto(S.i - 1); }
+
+  if(act === "opt"){
+    const st = STEPS[S.i];
+    S.ans[st.id] = parseInt(el.dataset.i, 10);
+    save();
+    document.querySelectorAll(".opt").forEach(b => b.classList.toggle("sel", b === el));
+    const nb = document.getElementById("nextBtn");
+    if(nb) nb.disabled = false;
+    return;
+  }
+
+  if(act === "copy"){
+    const text = summaryText(compute());
+    const out = document.getElementById("copyOut");
+    const fallback = () => {
+      out.hidden = false;
+      out.innerHTML = '<textarea class="copybox" id="copyTa" readonly></textarea>';
+      const ta = document.getElementById("copyTa");
+      ta.value = text; ta.focus(); ta.select();
+    };
+    try{
+      navigator.clipboard.writeText(text).then(() => {
+        out.hidden = false;
+        out.innerHTML = '<p class="fine">Copiado. Pegalo donde quieras guardarlo o compartirlo.</p>';
+      }, fallback);
+    }catch(err){ fallback(); }
+    return;
+  }
+
+  if(act === "restart"){
+    S = {i:0, ans:{}, prod:"", name:""};
+    save(); render();
+  }
+});
+
+document.addEventListener("input", e => {
+  const id = e.target && e.target.id;
+  if(id === "name"){
+    S.name = e.target.value.slice(0, 40);
+    save();
+    const sb = document.getElementById("startBtn");
+    if(sb) sb.disabled = !S.name.trim();
+  }else if(id === "prod"){
+    S.prod = e.target.value.slice(0, 600);
+    save();
+    if(waOK){
+      const href = waHref(waMessage(compute()));
+      document.querySelectorAll("a[data-wa]").forEach(a => { a.href = href; });
+    }
+  }
+});
+
+load();
+render();
+</script>
+
+</body></html>
